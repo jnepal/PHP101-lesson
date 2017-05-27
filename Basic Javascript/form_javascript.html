@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script language="javascript">
+function validate()
+{
+	var name=document.form1.name.value;
+	var age=document.form1.age.value;
+	alert(name);
+	alert(age);
+	if(name=='')
+	{
+		//alert('Enter Name');
+		document.getElementById('name').innerHTML="Enter Name";
+		document.form1.name.focus();
+		return false;
+	}
+	if(name=='')
+	{
+		//alert("Enter Age");
+		document.form1.age.focus();
+		return false;
+		
+	}
+	
+	
+}
+
+</script>
+</head>
+
+<body>
+<form onsubmit="javascript: return validate()" id="form1" name="form1" method="post" action="">
+  <table width="307" border="0">
+    <tr>
+      <td width="171"> Name</td>
+      <td width="120"><input type="text" name="name" id="textfield" />
+      <span id="name"></span></td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td><input type="number" name="age" id="textfield3" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="submit" id="button" value="Submit" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

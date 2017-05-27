@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script language="javascript">
+function validate()
+{
+	var name=document.form1.name.value;
+	var password=document.form1.password.value;
+	var confirmpassword=document.form1.confirmpassword.value;
+		if(name=='')
+	{
+		document.getElementById('name').innerHTML="*This field is compulsory";
+		document.form1.name.focus();
+		return false;
+		
+	}
+		if(password=='')
+		{
+			document.getElementById('password').innerHTML="*This field is compulsory"; 
+			document.form1.password.focus();
+			return false;
+		}
+		if(confirmpassword=='')
+		{
+			document.getElementById('confirmpassword').innerHTML="*This field is compulsory";
+			document.form1.confirmpassword.focus();
+			return false;
+		}
+		
+		if(password!=confirmpassword)
+		{
+		  document.getElementById('confirmpassword').innerHTML="The password don't match";
+		  document.form1.confirmpassword.focus();	
+		  return false;
+		}
+	
+	
+	
+}
+</script>
+
+</head>
+
+<body>
+<form name="form1" method="post">
+<table width="583" border="0">
+  <tr>
+    <td width="158">Name</td>
+    <td width="195"><input type="text" name="name" id="textfield" /></td><td width="154"><div id="name"></div></td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td><input type="password" name="password" id="textfield" /></td><td><span id="password"></span></td>
+  </tr>
+  <tr>
+    <td>Confirm Password</td>
+    <td><input type="password" name="confirmpassword" id="textfield" /></td><td><span id="confirmpassword"></span></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input onclick="javascript: return validate()" type="submit" name="button" id="button" value="Submit" /></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
